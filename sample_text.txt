@@ -1,0 +1,4 @@
+[0:16, 10/2/2021] Adria Hernandez: Buenas, en el primer problema
+[0:16, 10/2/2021] Adria Hernandez: Te dan p1
+[0:16, 10/2/2021] Adria Hernandez: Y p0
+[0:16, 10/2/2021] Adria Hernandez: Y hay que sacar el resultado para el ángulo corto

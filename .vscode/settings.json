@@ -1,0 +1,6 @@
+{
+    "python.pythonPath": "/Users/josepalsina/.virtualenvs/edit-paste-app-venv/bin/python",
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": true,
+    "python.languageServer": "Jedi"
+}
