@@ -2,8 +2,10 @@ import tkinter as tk
 import re
 
 HEIGHT = 20
+TITLE = "Paste Text From Chats to Remove The Sender"
 
-root = tk.Tk("Paste Text From Chats to Remove The Sender")
+root = tk.Tk()
+root.title(TITLE)
 text = tk.Text(height=HEIGHT)
 text.pack(side="top", fill="x")
 
