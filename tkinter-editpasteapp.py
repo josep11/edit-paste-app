@@ -24,6 +24,8 @@ def transform_text(text):
     text = re.sub(regex, "", text, 0, re.MULTILINE)
     regex2 = r"\n\n"  # telegram: rm 1 line
     text = re.sub(regex2, "\n", text, 0, re.MULTILINE)
+    regexFbMessenger = r".* sent.*\d{2}:\d{2}\n" 
+    text = re.sub(regexFbMessenger, "", text, 0, re.MULTILINE)
     return text
 
 
