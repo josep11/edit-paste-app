@@ -1,6 +1,6 @@
 # EditPasteApp
 
-This App is for removing the user from Chats copied to the clipboard from Whatsapp/Telegram. Usage: Run the App paste the conversation:
+This App is for stripping the user from Chats copied to the clipboard from Whatsapp/Telegram/Messenger. Usage: Run the App paste the conversation:
 
     user1: hello
     user1: how are you doing today?
@@ -39,4 +39,11 @@ Windows:
     ```
 
     - pip install pyinstaller
+
 2. Then simply run ./build.sh
+
+## Deploy to Applications
+
+```bash
+cp -r dist/EditPasteApp.app /Applications/
+```

@@ -2,7 +2,7 @@ import tkinter as tk
 import re
 
 HEIGHT = 20
-TITLE = "Paste Text From Chats to Remove The Sender"
+TITLE = "Paste Text From Chats to Strip The Sender"
 
 root = tk.Tk()
 root.title(TITLE)
@@ -22,8 +22,14 @@ def transform_text(text):
     #   Hola, com va això?
     regex = r".*\:\s"  # whatsapp: remove sender and date
     text = re.sub(regex, "", text, 0, re.MULTILINE)
-    regex2 = r"\n\n"  # telegram: rm 1 line
+
+
+    regex2 = r"\n\n"  # telegram: rm 1 line (useful for Telegram version < 2.5.9)
     text = re.sub(regex2, "\n", text, 0, re.MULTILINE)
+
+    regex3  = r".*\[(\d+([.]|:|-| )){4}\d{2}]\n" # telegram: (useful for Telegram version = 2.5.9) MATCHES: "<name of contact>, [18.02.21 22:47]\n"
+    text = re.sub(regex3, "\n", text, 0, re.MULTILINE)
+
     regexFbMessenger = r".* sent.*\d{2}:\d{2}\n" 
     text = re.sub(regexFbMessenger, "", text, 0, re.MULTILINE)
     return text
