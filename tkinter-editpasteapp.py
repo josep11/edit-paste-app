@@ -28,7 +28,7 @@ def transform_text(text):
     text = re.sub(regex2, "\n", text, 0, re.MULTILINE)
 
     regex3  = r".*\[(\d+([.]|:|-| )){4}\d{2}]\n" # telegram: (useful for Telegram version = 2.5.9) MATCHES: "<name of contact>, [18.02.21 22:47]\n"
-    text = re.sub(regex3, "\n", text, 0, re.MULTILINE)
+    text = re.sub(regex3, "", text, 0, re.MULTILINE)
 
     regexFbMessenger = r".* sent.*\d{2}:\d{2}\n" 
     text = re.sub(regexFbMessenger, "", text, 0, re.MULTILINE)
