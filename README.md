@@ -18,6 +18,9 @@ Will be transformed and copied to the clipboard back again like so:
     ```bash
     pyenv local 3.9.0
     ```
+## Hot to run tests
+
+python test_text_transformer.py
 
 ## How to run
 
