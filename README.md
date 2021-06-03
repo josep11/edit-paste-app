@@ -52,3 +52,11 @@ Windows:
 ```bash
 cp -r dist/EditPasteApp.app /Applications/
 ```
+
+## TODO
+
+- Form bundle correctly, so that Console system.log doesn't show import warning "Could not resolve origin of domain. XPC services in this domain's bundle will not be bootstrapped:"
+- See where logs/temp are written or specify on build
+- give it a name com.josepalsina.editpasteapp
+- Change icon
+- try to distribute to javi laptop
