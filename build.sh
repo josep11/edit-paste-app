@@ -7,4 +7,4 @@
 
 # pyinstaller --noconfirm --clean --onefile --noconsole --name $1 main.py
 
-pyinstaller --noconfirm --clean --onefile --noconsole --name EditPasteApp tkinter-editpasteapp.py
+pyinstaller --noconfirm --clean --onefile --noconsole --name EditPasteApp tkinter-editpasteapp.py text_transformer.py

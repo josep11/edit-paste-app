@@ -45,6 +45,8 @@ Windows:
 
 2. Then simply run ./build.sh
 
+3. If more files are added that need to be deployed they need to be specified inside build.sh
+
 ## Deploy to Applications
 
 ```bash
