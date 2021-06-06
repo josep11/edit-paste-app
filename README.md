@@ -47,15 +47,22 @@ Windows:
 
 3. If more files are added that need to be deployed they need to be specified inside build.sh
 
-## Deploy to Applications
-
+## Deployment
+./
 ```bash
 cp -r dist/EditPasteApp.app /Applications/
 ```
+
+### Build and run the build version
+
+./build.sh && open dist/EditPasteApp.app
+
+### See Logs
+
+subl ~/Library/Logs/EditPasteApp/editpasteapp.log
 
 ## TODO
 
 - Form bundle correctly, so that Console system.log doesn't show import warning "Could not resolve origin of domain. XPC services in this domain's bundle will not be bootstrapped:"
 - See where logs/temp are written or specify on build
-- give it a name com.josepalsina.editpasteapp
 - try to distribute to javi laptop

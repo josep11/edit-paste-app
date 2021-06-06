@@ -7,6 +7,9 @@
 
 # pyinstaller --noconfirm --clean --onefile --noconsole --name $1 main.py
 
+python -V
+echo
+
 pyinstaller --noconfirm --clean --onefile --noconsole \
     --osx-bundle-identifier=com.josepalsina.editpasteapp \
     --icon=paste.icns \
