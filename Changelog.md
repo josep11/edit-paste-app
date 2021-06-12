@@ -1,3 +1,6 @@
+## 1.0.1 / 12-06-2021
+  * bring window to the foreground on open app
+
 ## 1.0.0 / 06-06-2021
   * clipboard encoding propperly with module
   * logging to file

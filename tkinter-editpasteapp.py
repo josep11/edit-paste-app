@@ -13,7 +13,7 @@ import platform
 home = os.path.expanduser("~")
 
 # TODO: move versioning to config file or sth
-APP_VERSION = "1.0.0"
+APP_VERSION = "1.0.1"
 
 HEIGHT = 25
 TITLE = "Paste Text From Chats to Strip The Sender"
@@ -72,6 +72,12 @@ def handle_clipboard(event):
 
     return "break"
 
+# to bring the window to the front on opening
+def raise_above_all(window):
+    window.lift()
+    window.attributes('-topmost',True)
+    window.after_idle(root.attributes,'-topmost',False)
+
 def main():
     init_logger()
 
@@ -103,7 +109,11 @@ def main():
 
     root.config(menu=menubar)
 
+    raise_above_all(root)
+
     root.mainloop()
+
+
 
 if __name__ == '__main__':
     main()
