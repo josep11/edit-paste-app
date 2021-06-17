@@ -7,18 +7,21 @@ from tkinter import messagebox
 from text_transformer import *
 import logging
 import os
+import re
 import traceback
 import platform
 
 home = os.path.expanduser("~")
 
-# TODO: move versioning to config file or sth
-APP_VERSION = "1.0.1"
-
 HEIGHT = 25
 TITLE = "Paste Text From Chats to Strip The Sender"
 
 defaultTransformFunction = transform_text_social_media # transform_text_pdf
+
+def get_version():
+    fn = os.path.join(os.path.dirname(__file__), "edit-paste-app", "__init__.py")
+    with open(fn) as f:
+        return re.findall("__version__ = '([\d.\w]+)'", f.read())[0]
 
 def log(stri):
     # logging.warning("I'm a warning!")
@@ -98,7 +101,7 @@ def main():
     # Adding Help Menu
     help_ = Menu(menubar, tearoff = 0)
     menubar.add_cascade(label ='Help', menu = help_)
-    help_.add_command(label ='About', command = lambda: messagebox.showinfo("Versió", f'EditPasteApp v{APP_VERSION}'))
+    help_.add_command(label ='About', command = lambda: messagebox.showinfo("Versió", f'EditPasteApp v{get_version()}'))
 
     for i in range(int(HEIGHT / 2)):
         text.insert("end", "\n")
@@ -112,8 +115,6 @@ def main():
     raise_above_all(root)
 
     root.mainloop()
-
-
 
 if __name__ == '__main__':
     main()
