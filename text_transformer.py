@@ -22,6 +22,12 @@ def transform_text_social_media(text):
     text = re.sub(regexFbMessenger, "", text, 0, re.MULTILINE)
     return text
 
+#     TODO: there is a bug
+# Fl rev Geiler Java C c++ Quartus, [19.06.21 22:36]
+# (incluyendo un diagrama de cajas para las invocaciones): # esta linea queda omitida y borrada como la de arriba
+#
+# Fl rev Geiler Java C c++ Quartus, [19.06.21 22:36]
+# Pregunta 2.b
 
 # removes unnecessary newlines from pdf
 def transform_text_pdf(text):
