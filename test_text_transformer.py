@@ -39,6 +39,12 @@ Queda solo 1 hora"""
 
     assert textResult.find("Josep") == -1
 
+    text = """(incluyendo un diagrama de cajas para las invocaciones):"""
+
+    textResult = transform_text_social_media(text)
+
+    assert textResult == text, "should not strip this line but failed"
+
 
 if __name__ == "__main__":
     test_transform_text_social_media()

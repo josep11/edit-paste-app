@@ -6,7 +6,7 @@ def transform_text_social_media(text):
     #   [0:16, 10/2/2021] Joana: Hola, com va això?
     # Text returned:
     #   Hola, com va això?
-    regex = r".*\:\s"  # whatsapp: remove sender and date
+    regex = r"\[.*\].*:\s"  # whatsapp: remove sender and date
     text = re.sub(regex, "", text, 0, re.MULTILINE)
 
     regex2 = r"\n\n"  # telegram: rm 1 line (useful for Telegram version < 2.5.9)
@@ -21,13 +21,6 @@ def transform_text_social_media(text):
     regexFbMessenger = r".* sent.*\d{2}:\d{2}\n"
     text = re.sub(regexFbMessenger, "", text, 0, re.MULTILINE)
     return text
-
-#     TODO: there is a bug
-# Fl rev Geiler Java C c++ Quartus, [19.06.21 22:36]
-# (incluyendo un diagrama de cajas para las invocaciones): # esta linea queda omitida y borrada como la de arriba
-#
-# Fl rev Geiler Java C c++ Quartus, [19.06.21 22:36]
-# Pregunta 2.b
 
 # removes unnecessary newlines from pdf
 def transform_text_pdf(text):

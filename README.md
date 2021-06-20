@@ -60,9 +60,3 @@ cp -r dist/EditPasteApp.app /Applications/
 ### See Logs
 
 subl ~/Library/Logs/EditPasteApp/editpasteapp.log
-
-## TODO
-
-- Form bundle correctly, so that Console system.log doesn't show import warning "Could not resolve origin of domain. XPC services in this domain's bundle will not be bootstrapped:"
-- See where logs/temp are written or specify on build
-- try to distribute to javi laptop
