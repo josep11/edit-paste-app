@@ -26,7 +26,7 @@ python test_text_transformer.py
 
 Linux:
 
-    python3 tkinter-editpasteapp.py
+    python3 tkinter_editpasteapp.py
 
 Windows:
 

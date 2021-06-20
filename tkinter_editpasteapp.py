@@ -1,15 +1,14 @@
-import tkinter as tk
-
-from richxerox import copy, paste, clear, pasteall, available
-
-from tkinter import *
-from tkinter import messagebox
-from text_transformer import *
 import logging
 import os
 import re
+import tkinter as tk
 import traceback
+from tkinter import *
+from tkinter import messagebox
 import platform
+
+from richxerox import copy, paste, available
+from text_transformer import *
 
 home = os.path.expanduser("~")
 

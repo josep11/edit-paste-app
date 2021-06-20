@@ -7,11 +7,27 @@
 
 # pyinstaller --noconfirm --clean --onefile --noconsole --name $1 main.py
 
+
+echo APP VERSION $(cat edit-paste-app/__init__.py | grep version | awk '{split($0,a,"="); print a[2]}')
 python -V
 echo
+
 
 pyinstaller --noconfirm --clean --onefile --noconsole \
     --osx-bundle-identifier=com.josepalsina.editpasteapp \
     --icon=paste.icns \
     --name EditPasteApp \
-    tkinter-editpasteapp.py text_transformer.py
+    tkinter_editpasteapp.py text_transformer.py
+
+
+exit
+
+echo build w debug options
+
+pyinstaller --noconfirm --clean --onefile --noconsole \
+    --osx-bundle-identifier=com.josepalsina.editpasteapp \
+    --icon=paste.icns \
+    --name EditPasteApp \
+    --debug=imports \
+    --log-level=DEBUG \
+    tkinter_editpasteapp.py text_transformer.py
