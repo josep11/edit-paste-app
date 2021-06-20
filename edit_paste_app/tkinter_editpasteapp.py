@@ -1,14 +1,13 @@
 import logging
 import os
-import re
 import tkinter as tk
 import traceback
 from tkinter import *
 from tkinter import messagebox
-import platform
 
 from richxerox import copy, paste, available
-from text_transformer import *
+from .text_transformer import *
+import platform
 
 home = os.path.expanduser("~")
 
@@ -17,10 +16,14 @@ TITLE = "Paste Text From Chats to Strip The Sender"
 
 defaultTransformFunction = transform_text_social_media # transform_text_pdf
 
-def get_version():
-    fn = os.path.join(os.path.dirname(__file__), "edit-paste-app", "__init__.py")
-    with open(fn) as f:
-        return re.findall("__version__ = '([\d.\w]+)'", f.read())[0]
+from .__init__ import get_version
+
+# def get_version():
+#     return __version__
+#     fn = os.path.join(os.path.dirname(__file__), "edit_paste_app", "__init__.py")
+#     with open(fn) as f:
+#         res=re.findall("__version__ = \"([\d.\w]+)\"", f.read())
+#         return res[0]
 
 def log(stri):
     # logging.warning("I'm a warning!")
@@ -100,6 +103,7 @@ def main():
     # Adding Help Menu
     help_ = Menu(menubar, tearoff = 0)
     menubar.add_cascade(label ='Help', menu = help_)
+    log(get_version())
     help_.add_command(label ='About', command = lambda: messagebox.showinfo("Versió", f'EditPasteApp v{get_version()}'))
 
     for i in range(int(HEIGHT / 2)):

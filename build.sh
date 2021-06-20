@@ -13,13 +13,13 @@ echo APP VERSION $(cat edit-paste-app/__init__.py | grep version | awk '{split($
 python -V
 echo
 
-
 pyinstaller --noconfirm --clean --onefile --noconsole \
     --osx-bundle-identifier=com.josepalsina.editpasteapp \
     --icon=paste.icns \
     --name EditPasteApp \
-    tkinter_editpasteapp.py text_transformer.py
+    entry.py
 
+#    --add-binary edit_paste_app:edit_paste_app \
 
 exit
 
@@ -31,4 +31,4 @@ pyinstaller --noconfirm --clean --onefile --noconsole \
     --name EditPasteApp \
     --debug=imports \
     --log-level=DEBUG \
-    tkinter_editpasteapp.py text_transformer.py
+    entry.py
