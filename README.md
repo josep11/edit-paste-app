@@ -20,7 +20,10 @@ Will be transformed and copied to the clipboard back again like so:
     ```
 ## Hot to run tests
 
-python test_text_transformer.py
+    ```bash
+    # will find all tests named test*.py inside tests director
+    python -m unittest discover
+    ```
 
 ## How to run
 
