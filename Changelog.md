@@ -1,3 +1,8 @@
+## 1.0.4 / 21-06-2021
+  * modulise
+  * bugfix whatsapp stripping error
+  * freeze requirements.txt
+
 ## 1.0.1 / 12-06-2021
   * bring window to the foreground on open app
 
