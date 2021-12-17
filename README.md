@@ -18,6 +18,7 @@ Will be transformed and copied to the clipboard back again like so:
     ```bash
     pyenv local 3.9.0
     ```
+
 ## Hot to run tests
 
     ```bash
@@ -51,15 +52,13 @@ Windows:
 3. If more files are added that need to be deployed they need to be specified inside build.sh
 
 ## Deployment
-./
-```bash
-cp -r dist/EditPasteApp.app /Applications/
-```
+
+```./deploy.sh```
 
 ### Build and run the build version
 
-./build.sh && open dist/EditPasteApp.app
+```./build.sh && open dist/EditPasteApp.app```
 
 ### See Logs
 
-subl ~/Library/Logs/EditPasteApp/editpasteapp.log
+```subl ~/Library/Logs/EditPasteApp/editpasteapp.log```

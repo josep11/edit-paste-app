@@ -1,3 +1,3 @@
 #!/bin/bash
 
-cp -r dist/EditPasteApp.app /Applications/
+cp -R dist/EditPasteApp.app /Applications/
