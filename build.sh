@@ -9,14 +9,21 @@
 
 
 
-echo APP VERSION $(cat edit-paste-app/__init__.py | grep version | awk '{split($0,a,"="); print a[2]}' | sed "s/'//g")
+echo APP VERSION $(cat edit_paste_app/__init__.py | grep version | awk '{split($0,a,"="); print a[2]}' | sed "s/'//g")
 python -V
 echo
+
+# If using python 3.10.x use "--exclude-module _bootlocale"
+PYTHON_VERSION=$(python -V)
+if [[ "$PYTHON_VERSION" == *"3.10"* ]]; then
+    excluded_modules+=" _bootlocale"
+fi
 
 pyinstaller --noconfirm --clean --onefile --noconsole \
     --osx-bundle-identifier=com.josepalsina.editpasteapp \
     --icon=paste.icns \
     --name EditPasteApp \
+    --exclude-module $excluded_modules \
     entry.py
 
 #    --add-binary edit_paste_app:edit_paste_app \

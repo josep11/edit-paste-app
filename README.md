@@ -12,25 +12,30 @@ Will be transformed and copied to the clipboard back again like so:
 
 ## How to install
 
-1. Install the Python that it is working:
+> Note, it is not working on Mac M1
+
+1. Install the Python that it is working. If you are going to build it check the [How to Compile section](#how-to-compile) now.
 
 2. cd to the project folder and make it the default local python version:
-    ```bash
+
+    ```shell
     pyenv local 3.9.0
     ```
 
+3. `pip install -r requirements.txt`
+
 ## Hot to run tests
 
-    ```bash
-    # will find all tests named test*.py inside tests director
-    python -m unittest discover
-    ```
+```shell
+# will find all tests named test*.py inside tests director
+python -m unittest discover
+```
 
 ## How to run
 
 Linux:
 
-    python3 tkinter_editpasteapp.py
+    python entry.py
 
 Windows:
 
@@ -40,8 +45,8 @@ Windows:
 
 1. For compiling we need two things:
     - On MacOSX the python version needs to be installed as such:
-    
-    ```bash
+
+    ```shell
     env PYTHON_CONFIGURE_OPTS="--enable-framework" pyenv install 3.9.0
     ```
 
