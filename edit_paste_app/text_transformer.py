@@ -12,7 +12,7 @@ def transform_text_social_media(text):
     regex2 = r"\n\n"  # telegram: rm 1 line (useful for Telegram version < 2.5.9)
     text = re.sub(regex2, "\n", text, 0, re.MULTILINE)
 
-    regex3 = r".*\[(\d+([.]|:|-| )){4}\d{2}](\n|\s)" # telegram: (useful for Telegram version = 2.5.9) MATCHES: "<name of contact>, [18.02.21 22:47]\n"
+    regex3 = r".*\[(\d+([.]|:|\/|-| )){4}\d{2}](\n|\s)" # telegram: (useful for Telegram version = 3.4.8) MATCHES: "<name of contact>, [1/2/22 11:16]\n"
     text = re.sub(regex3, "", text, 0, re.MULTILINE)
 
     regex4_telegram_forward = r"\[.*(resposta|respuesta|response).(a|to).*\]\n" # telegram: MATCHES: "[En resposta a <name>]\n" or similars

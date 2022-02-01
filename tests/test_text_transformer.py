@@ -40,6 +40,14 @@ Por ejemplo, los receptores del grupo M2 pueden alterar la permeabilidad"""
 
         self.assertEqual(textResult, text, "should not strip this line but failed")
 
+        # Telegram version 3.4.8
+        text = """Fl Alex UMH, [1/2/22 11:16]
+El 6 digo
+Fl Alex UMH, [1/2/22 11:16]
+Para aprobar"""
+        textResult = transform_text_social_media(text)
+
+        self.assertEqual(textResult.find("Alex UMH"), -1)
 
 if __name__ == "__main__":
     unittest.main()
