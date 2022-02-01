@@ -26,10 +26,11 @@ Will be transformed and copied to the clipboard back again like so:
 
 ## Hot to run tests
 
-```shell
-# will find all tests named test*.py inside tests director
-python -m unittest discover
-```
+Will find all tests named test*.py inside tests director
+
+    ```shell
+    python -m unittest discover
+    ```
 
 ## How to run
 
@@ -46,11 +47,11 @@ Windows:
 1. For compiling we need two things:
     - On MacOSX the python version needs to be installed as such:
 
-    ```shell
-    env PYTHON_CONFIGURE_OPTS="--enable-framework" pyenv install 3.9.0
-    ```
+        ```shell
+        env PYTHON_CONFIGURE_OPTS="--enable-framework" pyenv install 3.9.0
+        ```
 
-    - pip install pyinstaller
+    - `pip install pyinstaller`
 
 2. Then simply run ./build.sh
 
