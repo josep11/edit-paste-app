@@ -1,3 +1,4 @@
+from .__init__ import get_version
 import logging
 import os
 import tkinter as tk
@@ -14,9 +15,8 @@ home = os.path.expanduser("~")
 HEIGHT = 25
 TITLE = "Paste Text From Chats to Strip The Sender"
 
-defaultTransformFunction = transform_text_social_media # transform_text_pdf
+defaultTransformFunction = transform_text_social_media  # transform_text_pdf
 
-from .__init__ import get_version
 
 # def get_version():
 #     return __version__
@@ -25,15 +25,18 @@ from .__init__ import get_version
 #         res=re.findall("__version__ = \"([\d.\w]+)\"", f.read())
 #         return res[0]
 
+
 def log(stri):
     # logging.warning("I'm a warning!")
     logging.info(stri)
     # logging.debug("I'm a debug message!")
 
+
 def init_logger():
     # TODO: make this file a class and create a global variable for the log path or another best practice
     # https://docs.python.org/3/howto/logging.html
-    logFileDir = home+'/Library/Logs/EditPasteApp/' # create logs directory if not exists
+    # create logs directory if not exists
+    logFileDir = home+'/Library/Logs/EditPasteApp/'
     logFile = logFileDir + 'editpasteapp.log'
     try:
         os.makedirs(logFileDir)
@@ -45,12 +48,14 @@ def init_logger():
                         format='%(asctime)s - %(levelname)s - %(message)s'
                         )
 
+
 def changeDefaultFunction(fn):
     # print(1)
     global defaultTransformFunction
     defaultTransformFunction = fn
     # messagebox.showinfo("changed default fn", defaultTransformFunction)
     log(f'defaultTransformFunction  {defaultTransformFunction}')
+
 
 def handle_clipboard(event):
     try:
@@ -73,15 +78,18 @@ def handle_clipboard(event):
         text.insert(tk.END, "\n\n\n\n\t\t\t\tCOPIED TO CLIPBOARD")
 
     except Exception as e:
-            logging.error(traceback.format_exc())
+        logging.error(traceback.format_exc())
 
     return "break"
 
 # to bring the window to the front on opening
+
+
 def raise_above_all(window):
     window.lift()
-    window.attributes('-topmost',True)
-    window.after_idle(root.attributes,'-topmost',False)
+    window.attributes('-topmost', True)
+    window.after_idle(root.attributes, '-topmost', False)
+
 
 def main():
     init_logger()
@@ -96,15 +104,18 @@ def main():
 
     menubar = Menu(root)
     modeMenu = Menu(menubar, tearoff=0)
-    modeMenu.add_command(label="Transform PDF text", command=lambda: changeDefaultFunction(transform_text_pdf))
-    modeMenu.add_command(label="Transform Telegram/Whats text", command=lambda: changeDefaultFunction(transform_text_social_media))
+    modeMenu.add_command(label="Transform PDF text",
+                         command=lambda: changeDefaultFunction(transform_text_pdf))
+    modeMenu.add_command(label="Transform Telegram/Whats text",
+                         command=lambda: changeDefaultFunction(transform_text_social_media))
     menubar.add_cascade(label="Edit", menu=modeMenu)
 
     # Adding Help Menu
-    help_ = Menu(menubar, tearoff = 0)
-    menubar.add_cascade(label ='Help', menu = help_)
+    help_ = Menu(menubar, tearoff=0)
+    menubar.add_cascade(label='Help', menu=help_)
     log(get_version())
-    help_.add_command(label ='About', command = lambda: messagebox.showinfo("Versió", f'EditPasteApp v{get_version()}'))
+    help_.add_command(label='About', command=lambda: messagebox.showinfo(
+        "Versió", f'EditPasteApp v{get_version()}'))
 
     for i in range(int(HEIGHT / 2)):
         text.insert("end", "\n")
@@ -119,6 +130,6 @@ def main():
 
     root.mainloop()
 
+
 if __name__ == '__main__':
     main()
-
