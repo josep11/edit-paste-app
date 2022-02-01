@@ -15,6 +15,7 @@ echo
 
 # If using python 3.10.x use "--exclude-module _bootlocale"
 PYTHON_VERSION=$(python -V)
+excluded_modules="_dummy"
 if [[ "$PYTHON_VERSION" == *"3.10"* ]]; then
     excluded_modules+=" _bootlocale"
 fi
@@ -23,7 +24,7 @@ pyinstaller --noconfirm --clean --onefile --noconsole \
     --osx-bundle-identifier=com.josepalsina.editpasteapp \
     --icon=paste.icns \
     --name EditPasteApp \
-    --exclude-module $excluded_modules \
+    --exclude-module "$excluded_modules" \
     entry.py
 
 #    --add-binary edit_paste_app:edit_paste_app \
