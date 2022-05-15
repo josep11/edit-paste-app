@@ -1,17 +1,14 @@
-import logging
-import os
 import tkinter as tk
 import traceback
+import platform
 
 from tkinter import Menu
 from tkinter import messagebox
 
 from richxerox import copy, paste, available
-from .text_transformer import transform_text_pdf, transform_text_social_media
-import platform
-from .app_config import AppConfig
+from edit_paste_app.text_transformer import transform_text_pdf, transform_text_social_media
+from edit_paste_app.logger_wrapper import logger
 
-home = os.path.expanduser("~")
 
 HEIGHT = 25
 TITLE = "Paste Text From Chats to Strip The Sender"
@@ -19,28 +16,6 @@ TITLE = "Paste Text From Chats to Strip The Sender"
 defaultTransformFunction = transform_text_social_media  # transform_text_pdf
 
 from .__init__ import get_version
-
-logger = logging.getLogger()
-logger.setLevel(logging.INFO)
-
-DEBUG_FILENAME = "debug.log"
-
-# TODO: make this file a class and create a global variable for the log path or another best practice
-# https://docs.python.org/3/howto/logging.html
-logFileDir = home + "/Library/Logs/EditPasteApp/"  # create logs directory if not exists
-logFile = logFileDir + "editpasteapp.log"
-try:
-    os.makedirs(logFileDir)
-except FileExistsError as e:
-    pass
-
-if AppConfig.isDev:
-    logging.basicConfig(filename=DEBUG_FILENAME, encoding="utf-8", level=logging.DEBUG)
-else:
-    logging.basicConfig(
-        filename=logFile, encoding="utf-8", level=logging.DEBUG, format="%(asctime)s - %(levelname)s - %(message)s"
-    )
-logger.info("1st")
 
 
 # def get_version():
