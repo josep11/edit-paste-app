@@ -17,7 +17,7 @@ Will be transformed and copied to the clipboard back again like so:
 2. cd to the project folder and make it the default local python version:
 
     ```shell
-    pyenv local 3.9.0
+    pyenv local 3.10.1
     ```
 
 3. `pip install -r requirements.txt`
