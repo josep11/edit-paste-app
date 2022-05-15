@@ -12,8 +12,6 @@ Will be transformed and copied to the clipboard back again like so:
 
 ## How to install
 
-> Note, it is not working on Mac M1
-
 1. Install the Python that it is working. If you are going to build it check the [How to Compile section](#how-to-compile) now.
 
 2. cd to the project folder and make it the default local python version:
@@ -67,24 +65,20 @@ Make sure that the shebang on all the `./*.sh` is the same as your default shell
 
 Warning: before deploying make sure that you delete the previous build file as I found there may be traces that will cause conflicts with newer builds.
 
-```./deploy.sh```
+    ```bash
+    ./build.sh && ./deploy.sh && terminal-notifier -message "deployed" -title "EditPasteApp"            
+    ```
 
 ### See Logs
 
 ```subl ~/Library/Logs/EditPasteApp/editpasteapp.log```
 
-## Problems
+## Issues template
 
-### Problems with the compiled version for Mac OS Monterrey
-
-- TODO: add this in github issue
-
-```
-
+```txt
 Python version: 
 Mac OS version:
 pyinstaller version to compile: 
 problems experienced: 
 logs: 
-
 ```
