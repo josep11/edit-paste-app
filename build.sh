@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 # aqui hace falta comprobar si tenemos instalado el
 # pyinstall y si no es el caso instalarlo y preguntarle
 # al usuario si quiere instalarlo

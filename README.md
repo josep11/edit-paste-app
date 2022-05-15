@@ -57,14 +57,32 @@ Windows:
 
 3. If more files are added that need to be deployed they need to be specified inside build.sh
 
+### Build and run the build version
+
+Make sure that the shebang on all the `./*.sh` is the same as your default shell. To get it: `echo $SHELL`. Then
+
+```./build.sh && open dist/EditPasteApp.app```
+
 ## Deployment
 
 ```./deploy.sh```
 
-### Build and run the build version
-
-```./build.sh && open dist/EditPasteApp.app```
-
 ### See Logs
 
 ```subl ~/Library/Logs/EditPasteApp/editpasteapp.log```
+
+## Problems
+
+### Problems with the compiled version for Mac OS Monterrey
+
+- TODO: add this in github issue
+
+```
+
+Python version: 
+Mac OS version:
+pyinstaller version to compile: 
+problems experienced: 
+logs: 
+
+```
