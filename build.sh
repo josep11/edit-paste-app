@@ -7,6 +7,13 @@
 
 # pyinstaller --noconfirm --clean --onefile --noconsole --name $1 main.py
 
+# -------------------------------- #
+# -------- BEGIN CONFIG ---------- #
+# -------------------------------- #
+ENTRY_FILE=entry.py
+# -------------------------------- #
+# -------- END CONFIG ---------- #
+# -------------------------------- #
 
 
 echo APP VERSION $(cat edit_paste_app/__init__.py | grep version | awk '{split($0,a,"="); print a[2]}' | sed "s/'//g")
@@ -19,12 +26,12 @@ if [[ "$PYTHON_VERSION" == *"3.10"* ]]; then
     excluded_modules+=" _bootlocale"
 fi
 
-pyinstaller --noconfirm --clean --onefile --noconsole \
+python -m PyInstaller --windowed --noconfirm --clean --onefile --noconsole \
     --osx-bundle-identifier=com.josepalsina.editpasteapp \
     --icon=paste.icns \
     --name EditPasteApp \
     --exclude-module $excluded_modules \
-    entry.py
+    $ENTRY_FILE
 
 #    --add-binary edit_paste_app:edit_paste_app \
 
