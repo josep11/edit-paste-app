@@ -18,8 +18,7 @@ def transform_text_social_media(text):
     regex3 = r".*\[(\d+([.]|:|\/|-| )){4}\d{2}](\n|\s)"
     text = re.sub(regex3, "", text, 0, re.MULTILINE)
 
-    # telegram: MATCHES: "[En resposta a <name>]\n" or similars
-    regex4_telegram_forward = r"\[.*(resposta|respuesta|response).(a|to).*\]\n"
+    regex4_telegram_forward = r"\[.*(resposta|respuesta|response|reply).(a|to).*\]\n" # telegram: MATCHES: "[En resposta a <name>]\n" or similars
     text = re.sub(regex4_telegram_forward, "", text, 0, re.MULTILINE)
 
     regexFbMessenger = r".* sent.*\d{2}:\d{2}\n"

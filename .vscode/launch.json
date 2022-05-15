@@ -9,8 +9,11 @@
             "type": "python",
             "request": "launch",
             "program": "${workspaceFolder}/entry.py",
-            "console": "integratedTerminal", //integratedTerminal
+            // "console": "integratedTerminal", //integratedTerminal
             // "sudo": true
+            "env": {
+                "ENV": "dev"
+            }
         },
         {
             "name": "Python: Current File",

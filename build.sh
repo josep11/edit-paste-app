@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 # aqui hace falta comprobar si tenemos instalado el
 # pyinstall y si no es el caso instalarlo y preguntarle
 # al usuario si quiere instalarlo
@@ -7,6 +7,13 @@
 
 # pyinstaller --noconfirm --clean --onefile --noconsole --name $1 main.py
 
+# -------------------------------- #
+# -------- BEGIN CONFIG ---------- #
+# -------------------------------- #
+ENTRY_FILE=entry.py
+# -------------------------------- #
+# -------- END CONFIG ---------- #
+# -------------------------------- #
 
 
 echo APP VERSION $(cat edit_paste_app/__init__.py | grep version | awk '{split($0,a,"="); print a[2]}' | sed "s/'//g")
@@ -20,7 +27,7 @@ if [[ "$PYTHON_VERSION" == *"3.10"* ]]; then
     excluded_modules+=" _bootlocale"
 fi
 
-pyinstaller --noconfirm --clean --onefile --noconsole \
+python -m PyInstaller --windowed --noconfirm --clean --onefile --noconsole \
     --osx-bundle-identifier=com.josepalsina.editpasteapp \
     --icon=paste.icns \
     --name EditPasteApp \
