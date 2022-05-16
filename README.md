@@ -48,25 +48,29 @@ Windows:
         ```shell
         env PYTHON_CONFIGURE_OPTS="--enable-framework" pyenv install 3.9.0
         ```
+
     - `pip install pyinstaller`
 
 2. Then simply run ./build.sh
 
 3. If more files are added that need to be deployed they need to be specified inside build.sh
 
-### Build and run the build version
+### Build and run the built version
 
+Make sure that the .env file includes all variables like in `.env.example`.
 Make sure that the shebang on all the `./*.sh` is the same as your default shell. To get it: `echo $SHELL`. Then
 
-```./build.sh && open dist/EditPasteApp.app```
+```bash
+./build.sh && source .env && open dist/$APP_NAME.app
+```
 
 ## Deployment
 
-Warning: before deploying make sure that you delete the previous build file as I found there may be traces that will cause conflicts with newer builds.
+Warning: before deploying make sure that you delete the previous build file from /Applications as I found there may be traces that will cause conflicts with newer builds.
 
-    ```bash
-    ./build.sh && ./deploy.sh && terminal-notifier -message "deployed" -title "EditPasteApp"            
-    ```
+```bash
+./build.sh && ./deploy.sh && source .env && terminal-notifier -message "deployed" -title "$APP_NAME"       
+```
 
 ### See Logs
 
