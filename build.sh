@@ -34,7 +34,7 @@ python -m PyInstaller --windowed --noconfirm --clean --onefile --noconsole \
     --icon=paste.icns \
     --name $APP_NAME \
     --exclude-module "$excluded_modules" \
-    entry.py
+    $ENTRY_FILE
 
 
 #    --add-binary edit_paste_app:edit_paste_app \
