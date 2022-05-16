@@ -10,5 +10,6 @@ if isDev:
 
 class AppConfig:
     # db_tracking_charset = os.getenv("DB_TRACKING_CHARSET")
+    APP_NAME = "EditPasteApp"
 
     isDev = isDev

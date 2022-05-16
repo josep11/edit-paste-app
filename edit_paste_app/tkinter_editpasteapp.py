@@ -13,24 +13,15 @@ from edit_paste_app.__init__ import get_version
 HEIGHT = 25
 TITLE = "Paste Text From Chats to Strip The Sender"
 
-defaultTransformFunction = transform_text_social_media  # transform_text_pdf
+default_transform_function = transform_text_social_media  # transform_text_pdf
 
 
-# TODO: delete fn
-# def get_version():
-#     return __version__
-#     fn = os.path.join(os.path.dirname(__file__), "edit_paste_app", "__init__.py")
-#     with open(fn) as f:
-#         res=re.findall("__version__ = \"([\d.\w]+)\"", f.read())
-#         return res[0]
-
-
-def changeDefaultFunction(fn):
+def change_default_function(fn):
     # print(1)
-    global defaultTransformFunction
-    defaultTransformFunction = fn
-    # messagebox.showinfo("changed default fn", defaultTransformFunction)
-    logger.info(f"defaultTransformFunction  {defaultTransformFunction}")
+    global default_transform_function
+    default_transform_function = fn
+    # messagebox.showinfo("changed default fn", default_transform_function)
+    logger.info(f"default_transform_function  {default_transform_function}")
 
 
 def handle_clipboard(event):
@@ -46,7 +37,7 @@ def handle_clipboard(event):
 
         # logger.debug(f'{cb}')
 
-        cb_transformed = defaultTransformFunction(clipboard)
+        cb_transformed = default_transform_function(clipboard)
         copy(cb_transformed)
 
         text.delete("0.0", tk.END)
@@ -79,12 +70,12 @@ def main():
         text.pack(side="top", fill="x")
 
         menubar = Menu(root)
-        modeMenu = Menu(menubar, tearoff=0)
-        modeMenu.add_command(label="Transform PDF text", command=lambda: changeDefaultFunction(transform_text_pdf))
-        modeMenu.add_command(
-            label="Transform Telegram/Whats text", command=lambda: changeDefaultFunction(transform_text_social_media)
+        mode_menu = Menu(menubar, tearoff=0)
+        mode_menu.add_command(label="Transform PDF text", command=lambda: change_default_function(transform_text_pdf))
+        mode_menu.add_command(
+            label="Transform Telegram/Whats text", command=lambda: change_default_function(transform_text_social_media)
         )
-        menubar.add_cascade(label="Edit", menu=modeMenu)
+        menubar.add_cascade(label="Edit", menu=mode_menu)
         # Adding Help Menu
         help_ = Menu(menubar, tearoff=0)
         menubar.add_cascade(label="Help", menu=help_)
