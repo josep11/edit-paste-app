@@ -71,7 +71,14 @@ Warning: before deploying make sure that you delete the previous build file as I
 
 ### See Logs
 
+See them:
 ```subl ~/Library/Logs/EditPasteApp/editpasteapp.log```
+
+Tail them:
+
+```bash
+tail -f ~/Library/Logs/EditPasteApp/editpasteapp.log
+```
 
 ## Issues template
 
@@ -82,3 +89,7 @@ pyinstaller version to compile:
 problems experienced: 
 logs: 
 ```
+
+## Future lines
+
+[Nice tutorial to build executables with pyinstaller](https://www.youtube.com/watch?v=3xuN9JQ7j1Q&ab_channel=CodingEntrepreneurs)
