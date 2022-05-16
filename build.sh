@@ -11,6 +11,8 @@
 # -------- BEGIN CONFIG ---------- #
 # -------------------------------- #
 ENTRY_FILE=entry.py
+APP_NAME=EditPasteApp
+BUNDLE_IDENTIFIER=com.josepalsina.editpasteapp
 # -------------------------------- #
 # -------- END CONFIG ---------- #
 # -------------------------------- #
@@ -28,11 +30,12 @@ if [[ "$PYTHON_VERSION" == *"3.10"* ]]; then
 fi
 
 python -m PyInstaller --windowed --noconfirm --clean --onefile --noconsole \
-    --osx-bundle-identifier=com.josepalsina.editpasteapp \
+    --osx-bundle-identifier=$BUNDLE_IDENTIFIER \
     --icon=paste.icns \
-    --name EditPasteApp \
+    --name $APP_NAME \
     --exclude-module "$excluded_modules" \
     entry.py
+
 
 #    --add-binary edit_paste_app:edit_paste_app \
 
