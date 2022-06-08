@@ -9,3 +9,5 @@ fi
 
 trash /Applications/$APP_NAME.app
 cp -R dist/$APP_NAME.app /Applications/
+
+trash dist/$APP_NAME.app
