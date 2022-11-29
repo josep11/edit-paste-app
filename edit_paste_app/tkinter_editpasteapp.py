@@ -59,6 +59,13 @@ def raise_above_all(window):
     window.after_idle(root.attributes, "-topmost", False)
 
 
+def create_help_submenu(menubar: Menu, version: str) -> Menu:
+    help_ = Menu(menubar, tearoff=0)
+    menubar.add_cascade(label="Help", menu=help_)
+    logger.info(version)
+    help_.add_command(label="About", command=lambda: messagebox.showinfo("Versió", f"EditPasteApp v{version}"))
+
+
 def main():
     logger.info(f"running with py version {platform.python_version()}...")
 
@@ -76,13 +83,9 @@ def main():
             label="Transform Telegram/Whats text", command=lambda: change_default_function(transform_text_social_media)
         )
         menubar.add_cascade(label="Edit", menu=mode_menu)
+
         # Adding Help Menu
-        help_ = Menu(menubar, tearoff=0)
-        menubar.add_cascade(label="Help", menu=help_)
-        logger.info(get_version())
-        help_.add_command(
-            label="About", command=lambda: messagebox.showinfo("Versió", f"EditPasteApp v{get_version()}")
-        )
+        create_help_submenu(menubar, get_version())
 
         for i in range(int(HEIGHT / 2)):
             text.insert("end", "\n")
