@@ -1,4 +1,5 @@
 import os
+from edit_paste_app.text_transformer import transform_text_social_media
 
 isDev = os.getenv("ENV") == "dev"
 
@@ -13,3 +14,5 @@ class AppConfig:
     APP_NAME = "EditPasteApp"
 
     isDev = isDev
+
+    default_transform_function = transform_text_social_media  # transform_text_pdf

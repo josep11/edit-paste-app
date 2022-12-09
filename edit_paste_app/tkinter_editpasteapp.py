@@ -1,7 +1,6 @@
 import tkinter as tk
 import traceback
 import platform
-
 from tkinter import Menu
 from tkinter import messagebox
 
@@ -9,36 +8,28 @@ from richxerox import copy, paste, available
 from edit_paste_app.text_transformer import transform_text_pdf, transform_text_social_media
 from edit_paste_app.logger_wrapper import logger
 from edit_paste_app.__init__ import get_version
+from edit_paste_app.app_config import AppConfig
 
 HEIGHT = 25
 TITLE = "Paste Text From Chats to Strip The Sender"
 
-default_transform_function = transform_text_social_media  # transform_text_pdf
-
 
 def change_default_function(fn):
-    # print(1)
-    global default_transform_function
-    default_transform_function = fn
-    # messagebox.showinfo("changed default fn", default_transform_function)
-    logger.info(f"default_transform_function  {default_transform_function}")
+    AppConfig.default_transform_function = fn
+
+    logger.info("default_transform_function %s", AppConfig.default_transform_function)
 
 
 # receives an event
 def handle_clipboard(_):
     try:
-        # cb = pyperclip.paste() # root.clipboard_get() # cb = clipboard.paste() # none of them working with ó í á à
-        # root.clipboard_append(cb_transformed) # clipboard.copy(cb_transformed)
-
         clipboard = paste()
 
-        if not "text" in available():
-            logger.info(f"Clipboard is not string. Available types {available()}")
+        if "text" not in available():
+            logger.info("Clipboard is not string. Available types %s", available())
             return "break"
 
-        # logger.debug(f'{cb}')
-
-        cb_transformed = default_transform_function(clipboard)
+        cb_transformed = AppConfig.default_transform_function(clipboard)
         copy(cb_transformed)
 
         text.delete("0.0", tk.END)
@@ -68,7 +59,7 @@ def create_help_submenu(menubar: Menu, version: str):
 
 
 def main():
-    logger.info(f"running with py version {platform.python_version()}...")
+    logger.info("running with py version %s...", platform.python_version())
 
     try:
         global root, text
