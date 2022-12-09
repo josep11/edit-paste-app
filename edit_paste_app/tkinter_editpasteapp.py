@@ -59,7 +59,7 @@ def raise_above_all(window):
     window.after_idle(root.attributes, "-topmost", False)
 
 
-def create_help_submenu(menubar: Menu, version: str) -> Menu:
+def create_help_submenu(menubar: Menu, version: str):
     help_ = Menu(menubar, tearoff=0)
     menubar.add_cascade(label="Help", menu=help_)
     logger.info(version)
