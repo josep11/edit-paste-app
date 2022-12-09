@@ -24,7 +24,8 @@ def change_default_function(fn):
     logger.info(f"default_transform_function  {default_transform_function}")
 
 
-def handle_clipboard(event):
+# receives an event
+def handle_clipboard(_):
     try:
         # cb = pyperclip.paste() # root.clipboard_get() # cb = clipboard.paste() # none of them working with ó í á à
         # root.clipboard_append(cb_transformed) # clipboard.copy(cb_transformed)
@@ -87,7 +88,7 @@ def main():
         # Adding Help Menu
         create_help_submenu(menubar, get_version())
 
-        for i in range(int(HEIGHT / 2)):
+        for _ in range(int(HEIGHT / 2)):
             text.insert("end", "\n")
 
         text.insert("end", "\t\t\t\tPaste content to transform")
