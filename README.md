@@ -69,7 +69,7 @@ Make sure that the shebang on all the `./*.sh` is the same as your default shell
 Warning: before deploying make sure that you delete the previous build file from /Applications as I found there may be traces that will cause conflicts with newer builds.
 
 ```bash
-./build.sh && ./deploy.sh && source .env && terminal-notifier -message "deployed" -title "$APP_NAME"       
+./build_and_deploy.zsh       
 ```
 
 ### See Logs
