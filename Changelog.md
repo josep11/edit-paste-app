@@ -1,3 +1,9 @@
+## 1.0.8 / 20-12-2022
+  * updated deps
+
+## 1.0.7 / 20-12-2022
+  * updated deps
+
 ## 1.0.4 / 21-06-2021
   * modulise
   * bugfix whatsapp stripping error
