@@ -27,7 +27,7 @@ Will be transformed and copied to the clipboard back again like so:
 Will find all tests named test*.py inside tests director
 
     ```shell
-    python -m unittest discover
+    make test
     ```
 
 ## How to run

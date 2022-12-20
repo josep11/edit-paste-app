@@ -46,3 +46,7 @@ pip/list-outdated:
 ## Pip check for newer versions of dependencies
 pip/check:
 	pip-check -u -H
+
+## Run unit tests
+test:
+	python -m unittest discover
