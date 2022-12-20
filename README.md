@@ -96,3 +96,7 @@ logs:
 ## Future lines
 
 [Nice tutorial to build executables with pyinstaller](https://www.youtube.com/watch?v=3xuN9JQ7j1Q&ab_channel=CodingEntrepreneurs)
+
+## Development
+
+Upgrade dependencies. Run `make pip/check` (you will need to have installed `pip install pip-check` before).
