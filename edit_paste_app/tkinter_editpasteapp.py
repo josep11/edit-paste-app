@@ -20,8 +20,8 @@ def change_default_function(fn):
     logger.info("default_transform_function %s", AppConfig.default_transform_function)
 
 
-# receives an event
 def handle_clipboard(_):
+    # receives an event
     try:
         clipboard = paste()
 
@@ -42,10 +42,9 @@ def handle_clipboard(_):
     return "break"
 
 
-# to bring the window to the front on opening
-
 
 def raise_above_all(window):
+    """to bring the window to the front on opening"""
     window.lift()
     window.attributes("-topmost", True)
     window.after_idle(root.attributes, "-topmost", False)
