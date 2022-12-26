@@ -99,7 +99,7 @@ pyobjc-framework-Intents==7.3
 pyobjc-framework-IOSurface==7.3
 pyobjc-framework-iTunesLibrary==7.3
 pyobjc-framework-KernelManagement==7.3
-pyobjc-framework-LatentSemanticMapping==7.3
+pyobjc-framework-LatentSemanticMapping==9.0.1
 pyobjc-framework-LaunchServices==7.3
 pyobjc-framework-libdispatch==7.3
 pyobjc-framework-LinkPresentation==7.3
