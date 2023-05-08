@@ -1,3 +1,7 @@
+## Pip freeze dependencies
+pip/freeze:
+	pip freeze > requirements.txt
+
 ## Pip list outdated packages
 pip/list-outdated:
 	pip list --outdated
