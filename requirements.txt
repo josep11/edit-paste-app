@@ -132,7 +132,7 @@ pyobjc-framework-PreferencePanes==7.3
 pyobjc-framework-PushKit==7.3
 pyobjc-framework-Quartz==7.3
 pyobjc-framework-QuickLookThumbnailing==7.3
-pyobjc-framework-ReplayKit==7.3
+pyobjc-framework-ReplayKit==9.0.1
 pyobjc-framework-SafariServices==7.3
 pyobjc-framework-SceneKit==7.3
 pyobjc-framework-ScreenSaver==7.3
