@@ -72,7 +72,7 @@ pyobjc-framework-CoreText==9.0.1
 pyobjc-framework-CoreWLAN==9.0.1
 pyobjc-framework-CryptoTokenKit==9.0.1
 pyobjc-framework-DeviceCheck==9.0.1
-pyobjc-framework-DictionaryServices==9.0.1
+pyobjc-framework-DictionaryServices==9.1.1
 pyobjc-framework-DiscRecording==9.0.1
 pyobjc-framework-DiscRecordingUI==9.0.1
 pyobjc-framework-DiskArbitration==9.0.1
