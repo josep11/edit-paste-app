@@ -160,7 +160,7 @@ pyobjc-framework-Vision==9.0.1
 pyobjc-framework-WebKit==9.0.1
 python-dotenv==0.21.0
 PyYAML==6.0
-requests==2.27.1
+requests==2.31.0
 richxerox==1.0.1
 smmap==5.0.0
 stevedore==3.5.0
