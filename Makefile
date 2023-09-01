@@ -1,3 +1,4 @@
+
 default: help
 
 include .make/*.mk
@@ -10,15 +11,15 @@ logs-tail:
 tail-logs: logs-tail
 
 ## Build
-build:
+build: test
 	./build.zsh
 
 ## Build and run
-build-and-run:
+build-and-run: test
 	./build_and_run.zsh
 
 ## Build and deploy
-build-and-deploy:
+build-and-deploy: test
 	./build_and_deploy.zsh
 
 ## Cleans up already merged branches
@@ -33,3 +34,6 @@ _ensure-requirements-dev:
 test:
 	make _ensure-requirements-dev
 	pytest -q
+
+
+.PHONY: _ensure-requirements-dev
