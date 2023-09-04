@@ -1,7 +1,7 @@
 altgraph==0.17.3
 astroid==2.15.6
 attrs==23.1.0
-autoflake==2.2.0
+autoflake==2.2.1
 autopep8==2.0.4
 bandit==1.7.5
 black==23.7.0
