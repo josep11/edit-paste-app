@@ -90,3 +90,5 @@ ENV/
 
 # For IDE Idea
 \.idea/
+
+playground.*
