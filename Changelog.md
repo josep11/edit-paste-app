@@ -1,3 +1,5 @@
+# Changelog
+
 ## 1.1.4 / 01-11-2023
 
 * updated minor deps
