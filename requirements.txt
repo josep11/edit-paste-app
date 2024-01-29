@@ -202,7 +202,7 @@ pyobjc-framework-Virtualization==10.0
 pyobjc-framework-Vision==10.0
 pyobjc-framework-WebKit==10.0
 pyparsing==3.1.1
-pytest==7.4.3
+pytest==8.0.0
 python-dotenv==1.0.0
 PyYAML==6.0.1
 requests==2.31.0
