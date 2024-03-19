@@ -26,7 +26,7 @@ def handle_clipboard(_):
         clipboard = paste()
 
         if "text" not in available():
-            logger.info("Clipboard is not string. Available types %s", available())
+            logger.info("Clipboard is not string/array. Available types %s", available())
             return "break"
 
         cb_transformed = AppConfig.default_transform_function(clipboard)
