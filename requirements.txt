@@ -255,7 +255,7 @@ tornado==6.4
 traitlets==5.14.2
 typing_extensions==4.10.0
 uritemplate==4.1.1
-urllib3==2.2.1
+urllib3==2.2.2
 wcwidth==0.2.13
 webencodings==0.5.1
 wrapt==1.16.0
