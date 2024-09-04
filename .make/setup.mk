@@ -16,8 +16,7 @@ pyenv-virtualenv/create:
 
 ## Activate a virtual environment locally. make pyenv-virtualenv/activate VENV_NAME=py3.12.2-my-project-name
 pyenv-virtualenv/activate:
-	pyenv local 
-	pyenv virtualenv ${VERSION} py${VERSION}-${PROJECT_NAME}
+	pyenv local ${VENV_NAME}
 
 ## Pip freeze dependencies
 pip/freeze:
