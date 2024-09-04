@@ -6,17 +6,22 @@ pyenv/versions:
 pyenv/install-list:
 	pyenv install --list
 
-## Install a new python version through pyenv. make pyenv/install VERSION=3.12.2
+## Install a new python version through pyenv. make pyenv/install VERSION=3.12.5
 pyenv/install:
 	pyenv install ${VERSION}
 
-## Create a virtual environment for a project. make pyenv-virtualenv/create VERSION=3.12.2 PROJECT_NAME=my-project-name
+## Create a virtual environment for a project. make pyenv-virtualenv/create VERSION=3.12.5 PROJECT_NAME=my-project-name
 pyenv-virtualenv/create:
 	pyenv virtualenv ${VERSION} py${VERSION}-${PROJECT_NAME}
 
-## Activate a virtual environment locally. make pyenv-virtualenv/activate VENV_NAME=py3.12.2-my-project-name
+## Activate a virtual environment locally. make pyenv-virtualenv/activate VENV_NAME=py3.12.5-my-project-name
 pyenv-virtualenv/activate:
 	pyenv local ${VENV_NAME}
+# pyenv activate ${VENV_NAME}
+
+## Show the local pyenv
+pyenv-virtualenv/local:
+	pyenv local
 
 ## Debug pyenv, python and pip info
 pyenv/debug:
@@ -53,4 +58,3 @@ pip/install-dev:
 pip/remove:
 	pip uninstall -y ${PACKAGE}
 	make pip/freeze
-
