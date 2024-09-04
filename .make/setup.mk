@@ -18,6 +18,13 @@ pyenv-virtualenv/create:
 pyenv-virtualenv/activate:
 	pyenv local ${VENV_NAME}
 
+## Debug pyenv, python and pip info
+pyenv/debug:
+	@python -V && echo
+	@pip -V && echo
+	@which pip && echo
+	@make pyenv-virtualenv/local
+
 ## Pip freeze dependencies
 pip/freeze:
 	pip freeze > requirements.txt
