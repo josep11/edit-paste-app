@@ -95,7 +95,7 @@ pyobjc-framework-AVRouting==10.3.1
 pyobjc-framework-BackgroundAssets==10.3.1
 pyobjc-framework-BrowserEngineKit==10.3.1
 pyobjc-framework-BusinessChat==10.3.1
-pyobjc-framework-CalendarStore==10.3.1
+pyobjc-framework-CalendarStore==11.0
 pyobjc-framework-CallKit==10.3.1
 pyobjc-framework-CFNetwork==10.3.1
 pyobjc-framework-Cinematic==10.3.1
