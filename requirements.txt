@@ -81,7 +81,7 @@ pyobjc-framework-Accounts==10.3.1
 pyobjc-framework-AddressBook==10.3.1
 pyobjc-framework-AdServices==10.3.1
 pyobjc-framework-AdSupport==10.3.1
-pyobjc-framework-AppleScriptKit==10.3.1
+pyobjc-framework-AppleScriptKit==11.0
 pyobjc-framework-AppleScriptObjC==10.3.1
 pyobjc-framework-ApplicationServices==10.3.1
 pyobjc-framework-AppTrackingTransparency==10.3.1
