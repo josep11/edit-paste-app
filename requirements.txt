@@ -118,7 +118,7 @@ pyobjc-framework-CoreMIDI==10.3.1
 pyobjc-framework-CoreML==10.3.1
 pyobjc-framework-CoreMotion==10.3.1
 pyobjc-framework-CoreServices==10.3.1
-pyobjc-framework-CoreSpotlight==10.3.1
+pyobjc-framework-CoreSpotlight==11.0
 pyobjc-framework-CoreText==10.3.1
 pyobjc-framework-CoreWLAN==10.3.1
 pyobjc-framework-CryptoTokenKit==10.3.1
