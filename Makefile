@@ -37,3 +37,11 @@ test:
 
 
 .PHONY: _ensure-requirements-dev
+
+## Check for vulnerabilities in pip dependencies
+safety/check:
+	safety scan
+
+## Check for vulnerabilities in pip dependencies and fix them
+safety/check-fix:
+	safety scan --apply-fixes
